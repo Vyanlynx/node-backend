@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quick persistent JSON storage for prototypes and hackathons. No server setup needed - just store your JSON data and access it via REST API anywhere. Perfect for frontend developers and students." />
+    <meta name="keywords" content="JSON storage API, prototype backend, hackathon backend, no-setup backend, persistent JSON endpoint, REST API, frontend development, JSONPlaceholder alternative" />
+    <meta name="author" content="JSONVault" />
+    <meta property="og:title" content="JSONVault - Instant Backend for Your Prototypes" />
+    <meta property="og:description" content="Skip the backend setup. Store JSON data instantly and access it anywhere via API. Perfect for hackathons, prototypes, and learning." />
+    <meta property="og:type" content="website" />
+    <title>JSONVault - Instant Persistent JSON Backend | No Server Setup Required</title>
+    <link rel="preload" href="/style.css" as="style" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="app-header">
+        <div class="logo">
+          <div class="logo-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="14" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <path d="M12 14V10C12 6.68629 14.6863 4 18 4C21.3137 4 24 6.68629 24 10V14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="18" cy="22" r="2" fill="currentColor"/>
+              <path d="M18 24V26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="brand">
+            <h1>JSONVault</h1>
+            <span class="tagline">Instant JSON Storage</span>
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="stats">
+            <span class="stat-item">
+              <span class="stat-icon">⚡</span>
+              <span class="stat-value">2ms</span>
+            </span>
+            <span class="stat-item">
+              <span class="stat-icon">📦</span>
+              <span class="stat-value">Free</span>
+            </span>
+          </div>
+          <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>All Systems Go</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <div class="intro-section">
+          <h2 class="page-title">Your JSON. Stored. Instantly.</h2>
+          <p class="page-description">
+            Hackathon starting in an hour? Frontend ready but no backend? Just
+            paste your JSON here. We'll give you a live API endpoint.
+            <strong>No setup. No signup. No BS.</strong>
+          </p>
+          <div class="quick-note">
+            <p>
+              💡 Think of it like a vault for your JSON. Simple, fast, always
+              there when you need it.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Paste your JSON</h3>
+            <p>We'll store it and give you a URL. That's it.</p>
+          </div>
+
+          <form id="jsonForm" class="json-form">
+            <div class="input-group">
+              <label for="inputjson" class="input-label">
+                <span class="label-text">Your JSON Data</span>
+                <span class="label-hint"
+                  >Paste your JSON here - we'll store it and give you an API
+                  endpoint</span
+                >
+              </label>
+              <div class="textarea-wrapper">
+                <textarea
+                  id="inputjson"
+                  name="inputJson"
+                  placeholder='{
+  "users": [
+    {"id": 1, "name": "Alice", "role": "developer"},
+    {"id": 2, "name": "Bob", "role": "designer"}
+  ],
+  "settings": {
+    "theme": "light",
+    "notifications": true
+  }
+}'
+                  rows="14"
+                  aria-label="JSON data input field"
+                ></textarea>
+                <div class="textarea-footer">
+                  <span class="char-count">0 characters</span>
+                  <button
+                    type="button"
+                    class="format-btn"
+                    id="formatBtn"
+                    aria-label="Format JSON"
+                  >
+                    Format & Validate
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                id="clearBtn"
+                aria-label="Clear input"
+              >
+                <span class="btn-icon">✕</span>
+                Clear
+              </button>
+              <button
+                type="submit"
+                class="btn btn-primary"
+                id="submitButton"
+                aria-label="Submit data to server"
+              >
+                <span class="btn-icon">💾</span>
+                Save to Server
+                <div class="btn-loading"></div>
+              </button>
+            </div>
+          </form>
+
+          <div class="response-section" id="responseSection">
+            <h3>Your API Endpoint</h3>
+            <div class="response-content" id="responseContent">
+              <div class="empty-state">
+                <div class="empty-icon">🔗</div>
+                <p>
+                  After saving, you'll get an API endpoint to fetch your data
+                  from anywhere.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="features-section">
+          <div class="feature-card">
+            <h4>Zero setup</h4>
+            <p>
+              Paste JSON. Get URL. Start coding. That's it. No account needed.
+            </p>
+          </div>
+          <div class="feature-card">
+            <h4>Actually persistent</h4>
+            <p>
+              Your data doesn't vanish. It's there when you fetch it again.
+              Novel idea, right?
+            </p>
+          </div>
+          <div class="feature-card">
+            <h4>Made for devs</h4>
+            <p>
+              Built by someone who hates wasting time on backend setup. Fast.
+              Simple. Works.
+            </p>
+          </div>
+        </section>
+
+        <section class="use-cases">
+          <h3 class="section-title">Perfect for...</h3>
+          <div class="use-case-list">
+            <div class="use-case">
+              Quick frontend testing without spinning up a server
+            </div>
+            <div class="use-case">Hackathons when you need to ship NOW</div>
+            <div class="use-case">
+              Learning APIs with data that actually sticks around
+            </div>
+            <div class="use-case">
+              Client demos before committing to infrastructure
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <p>
+          Built in a weekend because I needed it. Now you can use it too. 🚀
+        </p>
+      </footer>
+    </div>
+
+    <div id="termsModal" class="terms-modal">
+      <div class="terms-modal-content">
+        <div class="terms-header">
+          <h2>📋 Terms & Conditions</h2>
+        </div>
+        <div class="terms-body">
+          <p><strong>Welcome to JSONVault!</strong></p>
+          <p>By using this service, you agree to the following:</p>
+          <!-- <ul>
+            <li>Data stored is automatically deleted after 24 hours</li>
+            <li>Do not store sensitive or personal information</li>
+            <li>This is a free service with no uptime guarantees</li>
+            <li>Your data is stored unencrypted on our server</li>
+            <li>We reserve the right to remove any content at any time</li>
+            <li>Use at your own risk - no liability for data loss</li>
+          </ul> -->
+          <p class="terms-note">
+            💡 This service is designed for prototyping and hackathons only.
+          </p>
+        </div>
+        <div class="terms-footer">
+          <button id="declineBtn" class="btn btn-secondary">✕ Decline</button>
+          <button id="acceptBtn" class="btn btn-primary">
+            ✓ Accept & Continue
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
